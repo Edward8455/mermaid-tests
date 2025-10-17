@@ -6,7 +6,7 @@ graph TD
     end
     A5 -- 输出序列 --> Output(Output)
 
-    XOR_Gate("⊕")  // 异或门节点，显示文本为⊕，用引号包裹更安全
+    XOR_Gate("⊕") 
 
     A1 --.-> XOR_Gate
     A4 --.-> XOR_Gate
