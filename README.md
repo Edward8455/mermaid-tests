@@ -1,14 +1,14 @@
 ```mermaid
 graph TD
-    subgraph 5-Stage Shift Register
-        direction LR
-        A1(a₁) --> A2(a₂) --> A3(a₃) --> A4(a₄) --> A5(a₅)
+    subgraph LFSR (f = a1 ⊕ a4)
+        XOR((⊕)) -- "新输入" --> a1(a1);
+        a1 --> a2(a2);
+        a2 --> a3(a3);
+        a3 --> a4(a4);
+        a4 --> a5(a5);
+        a5 -- "序列输出" --> Output([Output]);
+
+        a1 -- "反馈" --> XOR;
+        a4 -- "反馈" --> XOR;
     end
-    A5 -- 输出序列 --> Output(Output)
-
-    XOR_Gate("⊕") 
-
-    A1 --.-> XOR_Gate
-    A4 --.-> XOR_Gate
-    XOR_Gate -- 反馈 --> A1
 ```
