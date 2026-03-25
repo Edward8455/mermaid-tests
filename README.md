@@ -10,40 +10,42 @@ graph LR
     System -- "处理状态报表" --> Admin
 
     style System fill:#f9f,stroke:#333,stroke-width:4px
+
     classDiagram
     class 预约请求 {
-        +String 学号
-        +String 图书编号
-        +Date 预约日期
-        +String 操作类型_预约或取消
+        String 学号
+        String 图书编号
+        Date 预约日期
+        String 操作类型_预约或取消
     }
     
     class 图书信息 {
-        +String 图书编号
-        +String 书名
-        +String 作者
-        +String 出版社
-        +String 状态_可借_已借出_已预约
+        String 图书编号
+        String 书名
+        String 作者
+        String 出版社
+        String 状态_可借_已借出_已预约
     }
     
     class 学生信息 {
-        +String 学号
-        +String 姓名
-        +String 学院
-        +String 联系方式
+        String 学号
+        String 姓名
+        String 学院
+        String 联系方式
     }
     
     class 预约记录 {
-        +String 预约单号
-        +String 学号
-        +String 图书编号
-        +DateTime 提交时间
-        +String 记录状态
+        String 预约单号
+        String 学号
+        String 图书编号
+        DateTime 提交时间
+        String 记录状态
     }
     
     class 查询请求 {
-        +String 查询条件
+        String 查询条件
     }
+
     stateDiagram-v2
     [*] --> 待处理 : 学生提交预约
     
@@ -58,3 +60,4 @@ graph LR
     已失效 --> [*]
     预约失败 --> [*]
     已取消 --> [*]
+    
